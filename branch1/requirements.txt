@@ -1,0 +1,11 @@
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+scikit-learn>=1.3
+torch>=2.0
+matplotlib>=3.7
+jupyter
+# optional
+h5py        # SeFEF input files
+sefef       # official SeFEF scoring (pip install sefef)
+pytest      # or run: python tests/test_branch1.py

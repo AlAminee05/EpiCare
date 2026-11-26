@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "EpiCare",
+    "slug": "epicare",
+    "version": "1.0.0",
+    "description": "Prévision du risque de crise d'épilepsie à partir d'une montre connectée (outil de recherche).",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.epicare.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.epicare.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B2A4A",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "resizeMode": "contain",
+          "backgroundColor": "#0B2A4A"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d321ff73-33b9-479c-af6e-7625aa3c21e1"
+      }
+    },
+    "owner": "mariiieeeemmmms-team"
+  }
+}

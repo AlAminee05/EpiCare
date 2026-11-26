@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>EpiCare</title>
+  <meta name="description" content="EpiCare : prévision du risque de crise d'épilepsie à partir d'une montre connectée.">
+  <meta name="theme-color" content="#0B2A4A">
+  <meta name="color-scheme" content="light dark">
+  <!-- iOS: plein écran une fois ajoutée à l'écran d'accueil -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EpiCare">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="icons/icon-192.png" alt="" class="brand-mark" width="32" height="32">
+        <div class="brand-text">
+          <span class="brand-name">EpiCare</span>
+          <span class="brand-sub" id="brandSub">Prévision du risque</span>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="chip" id="patientBtn" aria-haspopup="dialog" aria-label="Choisir le patient">
+          <span class="ico" data-ico="user"></span><span id="patientLabel">—</span><span class="ico sm" data-ico="chevron"></span>
+        </button>
+        <button class="icon-btn" id="settingsBtn" aria-label="Réglages"><span class="ico" data-ico="settings"></span></button>
+      </div>
+    </header>
+
+    <div class="notice" id="synthNotice" hidden>
+      <span class="ico sm" data-ico="info"></span>
+      <span>Données <b>synthétiques</b> : elles vérifient le code, elles ne mesurent pas la performance réelle.</span>
+    </div>
+
+    <main class="views" id="views">
+      <section class="view" id="view-home" data-title="Aujourd'hui"></section>
+      <section class="view" id="view-trends" data-title="Tendances" hidden></section>
+      <section class="view" id="view-cycles" data-title="Cycles" hidden></section>
+      <section class="view" id="view-perf" data-title="Performance" hidden></section>
+      <section class="view" id="view-detect" data-title="Détection" hidden></section>
+    </main>
+
+    <nav class="tabbar" role="tablist">
+      <button class="tab active" data-view="home" role="tab"><span class="ico" data-ico="gauge"></span><span>Aujourd'hui</span></button>
+      <button class="tab" data-view="trends" role="tab"><span class="ico" data-ico="trend"></span><span>Tendances</span></button>
+      <button class="tab" data-view="cycles" role="tab"><span class="ico" data-ico="orbit"></span><span>Cycles</span></button>
+      <button class="tab" data-view="perf" role="tab"><span class="ico" data-ico="target"></span><span>Fiabilité</span></button>
+      <button class="tab" data-view="detect" role="tab"><span class="ico" data-ico="shield"></span><span>Détection</span></button>
+    </nav>
+  </div>
+
+  <!-- feuille modale (patient, réglages) -->
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" hidden>
+    <div class="sheet-grip"></div>
+    <div id="sheetBody"></div>
+  </div>
+
+  <div class="tooltip" id="tooltip" hidden></div>
+  <input type="file" id="fileInput" accept="application/json,.json" hidden>
+
+  <script src="app.js"></script>
+</body>
+</html>
